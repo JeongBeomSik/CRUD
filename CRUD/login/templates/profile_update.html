@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+<h1>{{profile.user}}</h1>
+<h2>{{profile.nickname}}</h2>
+<h2>{{profile.introduction}}</h2>
+
+<form method="POST" action="{% url 'update_profile' %}">
+    {% csrf_token %}
+    <input type="text" placeholder="닉네임" name="nickname">
+    <input type="text" placeholder="설명" name="introduction">
+    <button type="submit">글쓰기</button>
+</form>
+
+   
+</body>
+</html>
